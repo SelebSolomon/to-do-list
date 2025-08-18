@@ -4,7 +4,7 @@ const date = require(__dirname + '/date.js')
 
 const app = express()
 
-let items = []
+let items = ['cook food', 'buy food', 'eat food']
 let work=[]
 
 
