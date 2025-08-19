@@ -54,7 +54,7 @@ body{
     gap: 4%;
 }
 
-form {
+form.list {
     display: flex;
     justify-content: center;
     gap: 2%;

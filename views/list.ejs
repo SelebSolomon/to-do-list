@@ -15,10 +15,13 @@
 
         
   <% newListItems.forEach((item, index) => { %>
-    <li class="list-div">
-      <input type="checkbox" id="item-<%= index %>">
-      <label for="item-<%= index %>"><%= item %></label>
-    </li>
+    <form action="/delete" method="post">
+      <li class="list-div">
+        <input type="checkbox" id="item-<%= index %>" name="checkbox" value="<%= item._id %>" onchange="this.form.submit()">
+        <label for="item-<%= index %>"><%= item.name %></label>
+      </li>
+      <input type="hidden" name="listName" value="<%= listTitle %>"> </input>
+    </form>
   <% }) %>
 </ul>
 
@@ -26,7 +29,7 @@
  
     <form action="/" method="post" >
         <input type="text" name="lists" autocomplete="off" required>
-        <button type="submit" name="list" value="work">submit</button>
+        <button type="submit" name="list" value="<%= listTitle %>">submit</button>
     </form>
      </div>
    
